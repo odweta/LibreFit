@@ -252,6 +252,26 @@ private fun SettingsScreenContent(
                     CircularProgressIndicator()
                 }
             } else LibreFitLazyColumn(innerPadding = innerPadding) {
+            item { HeadlineText(text = stringResource(R.string.data_management)) }
+
+            item {
+                SettingItem(
+                    onClick = onExportClicked,
+                    icon = painterResource(R.drawable.ic_backup),
+                    settingName = stringResource(R.string.export_data),
+                    settingDesc = stringResource(R.string.export_data_desc),
+                )
+            }
+
+            item {
+                SettingItem(
+                    onClick = onImportClicked,
+                    icon = painterResource(R.drawable.ic_restore),
+                    settingName = stringResource(R.string.import_data),
+                    settingDesc = stringResource(R.string.import_data_desc),
+                )
+            }
+
             item { HeadlineText(text = stringResource(id = R.string.appearance)) }
 
             item {
@@ -389,25 +409,6 @@ private fun SettingsScreenContent(
                 }
             }
 
-            item { HeadlineText(text = stringResource(R.string.data_management)) }
-
-            item {
-                SettingItem(
-                    onClick = onExportClicked,
-                    icon = painterResource(R.drawable.ic_backup),
-                    settingName = stringResource(R.string.export_data),
-                    settingDesc = stringResource(R.string.export_data_desc),
-                )
-            }
-
-            item {
-                SettingItem(
-                    onClick = onImportClicked,
-                    icon = painterResource(R.drawable.ic_restore),
-                    settingName = stringResource(R.string.import_data),
-                    settingDesc = stringResource(R.string.import_data_desc),
-                )
-            }
         }
     }
 }
